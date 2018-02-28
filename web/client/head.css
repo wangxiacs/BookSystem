@@ -1,0 +1,8 @@
+#body {
+    position: relative;
+}
+#user {
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 1314px;
+}

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - zhongfucheng@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.7">
+    <root id="1"/>
+    <schema id="2" parent="1" name="zhongfucheng">
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="ouzicheng"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="sys"/>
+    <table id="8" parent="2" name="book"/>
+    <table id="9" parent="2" name="category"/>
+    <table id="10" parent="2" name="orderitem"/>
+    <table id="11" parent="2" name="orders"/>
+    <table id="12" parent="2" name="user"/>
+    <table id="13" parent="2" name="privilege"/>
+    <table id="14" parent="2" name="user_privilege"/>
+    <column id="15" parent="8" name="id">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="8" name="name">
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="8" name="description">
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="18" parent="8" name="author">
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="19" parent="8" name="price">
+      <DataType>float|0</DataType>
+    </column>
+    <column id="20" parent="8" name="image">
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="21" parent="8" name="category_id">
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <index id="22" parent="8" name="category_id_FK">
+      <ColNames>category_id</ColNames>
+    </index>
+    <index id="23" parent="8" name="name">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="24" parent="8" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="25" parent="8" name="name">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>name</UnderlyingIndexName>
+    </key>
+    <foreign-key id="26" parent="8" name="category_id_FK">
+      <ColNames>category_id</ColNames>
+      <RefTableName>category</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="27" parent="9" name="id">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="9" name="name">
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="9" name="description">
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <index id="30" parent="9" name="name">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="31" parent="9" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="32" parent="9" name="name">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>name</UnderlyingIndexName>
+    </key>
+    <column id="33" parent="10" name="id">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="10" name="price">
+      <DataType>double|0</DataType>
+    </column>
+    <column id="35" parent="10" name="quantity">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="36" parent="10" name="order_id">
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <column id="37" parent="10" name="book_id">
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <index id="38" parent="10" name="book_id_FK">
+      <ColNames>book_id</ColNames>
+    </index>
+    <index id="39" parent="10" name="order_id_FK">
+      <ColNames>order_id</ColNames>
+    </index>
+    <key id="40" parent="10" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="41" parent="10" name="order_id_FK">
+      <ColNames>order_id</ColNames>
+      <RefTableName>orders</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="42" parent="10" name="book_id_FK">
+      <ColNames>book_id</ColNames>
+      <RefTableName>book</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="43" parent="11" name="id">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="11" name="ordertime">
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="11" name="user_id">
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <column id="46" parent="11" name="state">
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <column id="47" parent="11" name="price">
+      <DataType>double|0</DataType>
+    </column>
+    <index id="48" parent="11" name="user_id_FK">
+      <ColNames>user_id</ColNames>
+    </index>
+    <key id="49" parent="11" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="50" parent="11" name="user_id_FK">
+      <ColNames>user_id</ColNames>
+      <RefTableName>user</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="51" parent="12" name="id">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="12" name="username">
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="12" name="cellphone">
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="12" name="address">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="12" name="email">
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="56" parent="12" name="password">
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="57" parent="12" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="58" parent="13" name="id">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="13" name="name">
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <key id="60" parent="13" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="61" parent="14" name="privilege_id">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="14" name="user_id">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="63" parent="14" name="privilege_id_FK">
+      <ColNames>privilege_id</ColNames>
+    </index>
+    <key id="64" parent="14" name="PRIMARY">
+      <ColNames>user_id
+privilege_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="65" parent="14" name="privilege_id_FK">
+      <ColNames>privilege_id</ColNames>
+      <RefTableName>privilege</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="66" parent="14" name="user_id_FK1">
+      <ColNames>user_id</ColNames>
+      <RefTableName>user</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+  </database-model>
+</dataSource>

@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ajax:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/ajax_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ajax/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ajax" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+          <element id="library" level="module" name="JUnit4" module-name="ajax" />
+          <element id="library" level="project" name="springCore" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
